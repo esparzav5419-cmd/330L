@@ -1,10 +1,10 @@
 /*
  * Name: valentin esparza
- * Date: 10/11/26
+ * Date: 10/18/2026
  * Purpose: ConsoleUI is a reusable helper class that handles all console
  *          output for the application (banner, welcome message, section
- *          headers, and formatted employee table). It is designed to be
- *          reused in later weeks and in the final project.
+ *          headers, formatted employee table, and payroll report). It is
+ *          designed to be reused in later weeks and in the final project.
  */
 public class Consoleui {
 
@@ -23,8 +23,9 @@ public class Consoleui {
     public void showWelcome() {
         System.out.println();
         System.out.println("Welcome to the Employee Management System!");
-        System.out.println("This week's demo shows three employee types (Hourly,");
-        System.out.println("Salaried, and Commission) stored in sample data.");
+        System.out.println("This week's demo runs a sample payroll for three employee");
+        System.out.println("types (Hourly, Salaried, and Commission). It shows how one");
+        System.out.println("interface lets the program treat every employee the same way.");
         System.out.println("The full menu (add, remove, update, display, quit)");
         System.out.println("will be built out in later weeks.");
         System.out.println();
@@ -48,6 +49,18 @@ public class Consoleui {
                     e.getAddress().getCityState());
         }
         printLine('-');
+    }
+
+    /** Prints a payroll report for any list of Payable objects. */
+    public void showPayroll(java.util.List<? extends Payable> items, double total) {
+        System.out.printf("%-18s %-46s %-12s%n", "Name", "How Pay Was Figured", "Pay");
+        printLine('-');
+        for (Payable p : items) {
+            System.out.printf("%-18s %-46s %-12s%n", p.getName(),
+                    p.getPayDescription(), String.format("$%,.2f", p.calculatePay()));
+        }
+        printLine('-');
+        System.out.printf("%-65s %-12s%n", "TOTAL PAYROLL", String.format("$%,.2f", total));
     }
 
     private void printLine(char c) {
