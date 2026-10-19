@@ -1,15 +1,15 @@
 /*
  * Name: valentin esparza
- * Date: 10/11/26
+ * Date: 10/18/2026
  * Purpose: Address stores an employee's mailing address. It is used to
  *          demonstrate COMPOSITION: every Employee "has an" Address.
  */
 public class Address {
 
-    private String street;
-    private String city;
-    private String state;
-    private String zip;
+    private final String street;
+    private final String city;
+    private final String state;
+    private final String zip;
 
     public Address(String street, String city, String state, String zip) {
         this.street = street;
