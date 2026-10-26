@@ -1,6 +1,6 @@
 /*
  * Name: valentin esparza
- * Date: 10/18/2026
+ * Date: 10/25/26
  * Purpose: Payable is an INTERFACE that defines what it means to be paid
  *          through payroll. Any class that implements it promises to
  *          provide a name, a pay amount, and a description of how the
