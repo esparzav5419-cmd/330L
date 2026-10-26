@@ -1,14 +1,25 @@
 /*
  * Name: valentin esparza
- * Date: 10/18/2026
+ * Date: 10/25/26
  * Purpose: ConsoleUI is a reusable helper class that handles all console
  *          output for the application (banner, welcome message, section
  *          headers, formatted employee table, and payroll report). It is
  *          designed to be reused in later weeks and in the final project.
  */
-public class Consoleui {
+public class ConsoleUI {
 
-    private static final int WIDTH = 78;
+    // ACCESS SPECIFIER: private. The display width is an internal detail.
+    private final int width;
+
+    // CONSTRUCTOR 1 (default): standard 78-character console width.
+    public ConsoleUI() {
+        this(78);
+    }
+
+    // CONSTRUCTOR 2: lets the caller choose the display width.
+    public ConsoleUI(int width) {
+        this.width = width;
+    }
 
     /** Prints the project week indicator, assignment title, and author. */
     public void showBanner(String week, String title, String author) {
@@ -23,12 +34,17 @@ public class Consoleui {
     public void showWelcome() {
         System.out.println();
         System.out.println("Welcome to the Employee Management System!");
-        System.out.println("This week's demo runs a sample payroll for three employee");
-        System.out.println("types (Hourly, Salaried, and Commission). It shows how one");
-        System.out.println("interface lets the program treat every employee the same way.");
+        System.out.println("This week's demo shows abstraction, constructors, and access");
+        System.out.println("specifiers. Employee is now an abstract class, and employees");
+        System.out.println("are created using several different constructors.");
         System.out.println("The full menu (add, remove, update, display, quit)");
         System.out.println("will be built out in later weeks.");
         System.out.println();
+    }
+
+    /** Prints one line of text. */
+    public void showMessage(String text) {
+        System.out.println(text);
     }
 
     /** Prints a section header. */
@@ -64,11 +80,11 @@ public class Consoleui {
     }
 
     private void printLine(char c) {
-        System.out.println(String.valueOf(c).repeat(WIDTH));
+        System.out.println(String.valueOf(c).repeat(width));
     }
 
     private String center(String text) {
-        int pad = Math.max(0, (WIDTH - text.length()) / 2);
+        int pad = Math.max(0, (width - text.length()) / 2);
         return " ".repeat(pad) + text;
     }
 }
