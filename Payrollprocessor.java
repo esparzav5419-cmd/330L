@@ -1,13 +1,13 @@
 /*
  * Name: valentin esparza
- * Date: 10/18/2026
+ * Date: 10/25/26
  * Purpose: PayrollProcessor totals pay for a group of Payable objects.
  *          It only knows about the Payable interface, so it works with
  *          every employee type (and any future Payable class).
  */
 import java.util.List;
 
-public class Payrollprocessor {
+public class PayrollProcessor {
 
     /**
      * Adds up the pay for every item in the list.
