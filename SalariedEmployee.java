@@ -1,6 +1,6 @@
 /*
  * Name: valentin esparza
- * Date: 10/25/26
+ * Date: 10/31/26
  * Purpose: SalariedEmployee is a child of the abstract Employee class for
  *          employees paid a fixed annual salary (paid monthly). It
  *          implements the abstract methods from Employee and has two
@@ -10,7 +10,7 @@ public class SalariedEmployee extends Employee { // INHERITANCE
 
     // ACCESS SPECIFIER: private. Only this class uses these values.
     private static final int MONTHS_PER_YEAR = 12;
-    private final double annualSalary;
+    private double annualSalary; // not final: the update feature changes it
 
     // CONSTRUCTOR 1: full constructor with an explicit ID.
     public SalariedEmployee(int id, String name, Address address,
@@ -24,6 +24,10 @@ public class SalariedEmployee extends Employee { // INHERITANCE
         super(name, address);
         this.annualSalary = annualSalary;
     }
+
+    // PUBLIC getter and setter (Week 4): used by the database and menu.
+    public double getAnnualSalary() { return annualSalary; }
+    public void setAnnualSalary(double annualSalary) { this.annualSalary = annualSalary; }
 
     // ABSTRACTION: implements the abstract methods required by Employee.
     @Override
