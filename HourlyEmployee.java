@@ -1,6 +1,6 @@
 /*
  * Name: valentin esparza
- * Date: 10/25/26
+ * Date: 10/31/26
  * Purpose: HourlyEmployee is a child of the abstract Employee class for
  *          employees paid by the hour, with time-and-a-half over 40
  *          hours. It implements the abstract methods from Employee and
@@ -11,8 +11,8 @@ public class HourlyEmployee extends Employee { // INHERITANCE
     // ACCESS SPECIFIER: private constants and data. Only this class uses them.
     private static final double OVERTIME_THRESHOLD = 40;
     private static final double OVERTIME_MULTIPLIER = 1.5;
-    private final double hourlyRate;
-    private final double hoursWorked;
+    private double hourlyRate;   // not final: the update feature changes it
+    private double hoursWorked;
 
     // CONSTRUCTOR 1: full constructor with an explicit ID.
     public HourlyEmployee(int id, String name, Address address,
@@ -34,6 +34,12 @@ public class HourlyEmployee extends Employee { // INHERITANCE
     public HourlyEmployee(String name, Address address, double hourlyRate) {
         this(name, address, hourlyRate, OVERTIME_THRESHOLD);
     }
+
+    // PUBLIC getters and setters (Week 4): used by the database and menu.
+    public double getHourlyRate() { return hourlyRate; }
+    public double getHoursWorked() { return hoursWorked; }
+    public void setHourlyRate(double hourlyRate) { this.hourlyRate = hourlyRate; }
+    public void setHoursWorked(double hoursWorked) { this.hoursWorked = hoursWorked; }
 
     // ACCESS SPECIFIER: private helper. Only this class needs it, so it
     // is not exposed.
