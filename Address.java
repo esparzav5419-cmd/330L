@@ -1,6 +1,6 @@
 /*
  * Name: valentin esparza
- * Date: 10/25/26
+ * Date: 10/31/26
  * Purpose: Address stores an employee's mailing address. It demonstrates
  *          COMPOSITION (every Employee "has an" Address), several kinds of
  *          CONSTRUCTORS (default, parameterized, and copy), and ACCESS
@@ -43,6 +43,12 @@ public class Address {
     private static String clean(String value) {
         return value == null ? "" : value.trim();
     }
+
+    // PUBLIC getters: the database class needs each part of the address.
+    public String getStreet() { return street; }
+    public String getCity() { return city; }
+    public String getState() { return state; }
+    public String getZip() { return zip; }
 
     /** Public because the display code needs a short location. */
     public String getCityState() {
