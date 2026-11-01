@@ -1,9 +1,10 @@
 /*
  * Name: valentin esparza
- * Date: 10/25/26
+ * Date: 10/31/26
  * Purpose: ConsoleUI is a reusable helper class that handles all console
  *          output for the application (banner, welcome message, section
- *          headers, formatted employee table, and payroll report). It is
+ *          headers, menus, formatted employee table, employee details, and
+ *          payroll report). It is
  *          designed to be reused in later weeks and in the final project.
  */
 public class ConsoleUI {
@@ -34,11 +35,10 @@ public class ConsoleUI {
     public void showWelcome() {
         System.out.println();
         System.out.println("Welcome to the Employee Management System!");
-        System.out.println("This week's demo shows abstraction, constructors, and access");
-        System.out.println("specifiers. Employee is now an abstract class, and employees");
-        System.out.println("are created using several different constructors.");
-        System.out.println("The full menu (add, remove, update, display, quit)");
-        System.out.println("will be built out in later weeks.");
+        System.out.println("Use the menu to add, display, update, and remove employees.");
+        System.out.println("Type the number of a choice and press Enter. Your changes are");
+        System.out.println("saved in an SQLite database (employees.db), so they are still");
+        System.out.println("there the next time you run the program.");
         System.out.println();
     }
 
@@ -53,8 +53,25 @@ public class ConsoleUI {
         System.out.println("--- " + text + " ---");
     }
 
+    /** Prints a numbered menu with a title. */
+    public void showMenu(String title, String[] options) {
+        System.out.println();
+        System.out.println(center(title));
+        System.out.println("  " + "-".repeat(45));
+        for (String option : options) {
+            System.out.println("   " + option);
+        }
+        System.out.println("  " + "-".repeat(45));
+    }
+
+    /** Prints every detail of one employee. */
+    public void showEmployeeDetail(Employee e) {
+        System.out.println(e);
+        System.out.println("Pay Basis: " + e.getPayDescription());
+    }
+
     /** Prints a formatted table of employees. */
-    public void showEmployeeTable(Employee[] employees) {
+    public void showEmployeeTable(java.util.List<Employee> employees) {
         System.out.printf("%-4s %-18s %-11s %-12s %-22s%n",
                 "ID", "Name", "Type", "Pay", "Location");
         printLine('-');
@@ -65,6 +82,7 @@ public class ConsoleUI {
                     e.getAddress().getCityState());
         }
         printLine('-');
+        System.out.println(employees.size() + " employee(s) displayed.");
     }
 
     /** Prints a payroll report for any list of Payable objects. */
