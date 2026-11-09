@@ -1,10 +1,11 @@
 /*
  * Name: valentin esparza
- * Date: 10/31/26
- * Purpose: App is the entry point for the Week 4 demo. It displays the
- *          banner and welcome message, opens the SQLite database (filling
- *          it with sample employees the first time), and starts the menu.
- *          The program keeps running until the user chooses Quit.
+ * Date: 11/8/2026
+ * Purpose: App is the entry point for the Employee Management System. It
+ *          displays the banner and welcome message, opens the SQLite
+ *          database (filling it with sample employees the first time),
+ *          and starts the menu. The program keeps running until the user
+ *          chooses Quit.
  */
 import java.io.File;
 import java.sql.SQLException;
@@ -16,7 +17,7 @@ public class App {
 
     public static void main(String[] args) {
         ConsoleUI ui = new ConsoleUI();
-        ui.showBanner("PROJECT WEEK 4", "Database Interactions", "valentin esparza");
+        ui.showBanner("FINAL PROJECT", "Employee Management System", "Your Name");
         ui.showWelcome();
 
         boolean firstRun = !new File(DATABASE_FILE).exists();
@@ -40,7 +41,7 @@ public class App {
 
     /** Fills a brand-new database with realistic sample employees (CREATE). */
     private static void addSampleEmployees(EmployeeDatabase database) throws SQLException {
-        // CONSTRUCTORS: different constructors are used, as in Week 3.
+        // CONSTRUCTORS: different overloaded constructors are used here.
         database.addEmployee(new HourlyEmployee(1001, "Maria Santos",
                 new Address("412 Granby St", "Norfolk", "VA", "23510"), 24.50, 45));
         database.addEmployee(new SalariedEmployee("James Whitaker",
