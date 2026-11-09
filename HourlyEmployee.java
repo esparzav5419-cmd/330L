@@ -1,6 +1,6 @@
 /*
  * Name: valentin esparza
- * Date: 10/31/26
+ * Date: 11/8/2026
  * Purpose: HourlyEmployee is a child of the abstract Employee class for
  *          employees paid by the hour, with time-and-a-half over 40
  *          hours. It implements the abstract methods from Employee and
@@ -35,7 +35,7 @@ public class HourlyEmployee extends Employee { // INHERITANCE
         this(name, address, hourlyRate, OVERTIME_THRESHOLD);
     }
 
-    // PUBLIC getters and setters (Week 4): used by the database and menu.
+    // PUBLIC getters and setters: used by the database and menu.
     public double getHourlyRate() { return hourlyRate; }
     public double getHoursWorked() { return hoursWorked; }
     public void setHourlyRate(double hourlyRate) { this.hourlyRate = hourlyRate; }
