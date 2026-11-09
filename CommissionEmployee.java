@@ -1,6 +1,6 @@
 /*
  * Name: valentin esparza
- * Date: 10/31/26
+ * Date: 11/8/2026
  * Purpose: CommissionEmployee is a child of the abstract Employee class
  *          for employees paid a monthly base plus a percentage of sales.
  *          It implements the abstract methods from Employee and has three
@@ -39,7 +39,7 @@ public class CommissionEmployee extends Employee { // INHERITANCE
         this(name, address, baseMonthlyPay, 0, DEFAULT_COMMISSION_RATE);
     }
 
-    // PUBLIC getters and setters (Week 4): used by the database and menu.
+    // PUBLIC getters and setters: used by the database and menu.
     public double getBaseMonthlyPay() { return baseMonthlyPay; }
     public double getMonthlySales() { return monthlySales; }
     public double getCommissionRate() { return commissionRate; }
