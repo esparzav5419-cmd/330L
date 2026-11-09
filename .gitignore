@@ -1,0 +1,11 @@
+# Compiled files
+out/
+bin/
+*.class
+ 
+# Database created when the program runs (it is recreated with sample data)
+employees.db
+ 
+# Editor files
+.vscode/
+.idea/
