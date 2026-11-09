@@ -1,13 +1,13 @@
 /*
  * Name: valentin esparza
- * Date: 10/31/26
+ * Date: 11/8/2026
  * Purpose: Employee is an ABSTRACT BASE CLASS for all employee types. It
  *          holds the data every employee shares, implements the Payable
  *          interface, and requires each child class to supply its own
  *          type and pay rules. It also demonstrates COMPOSITION (it holds
  *          an Address), overloaded CONSTRUCTORS, and ACCESS SPECIFIERS.
- *          Week 4: name and address can now be changed through setters so
- *          the update feature can save changes to the database.
+ *          Name and address can be changed through setters so the update
+ *          feature can save changes to the database.
  */
 public abstract class Employee implements Payable {
 
@@ -43,7 +43,7 @@ public abstract class Employee implements Payable {
 
     public Address getAddress() { return address; }
 
-    // PUBLIC setters (Week 4): the menu's update feature needs to change
+    // PUBLIC setters: the menu's update feature needs to change
     // these values. The ID has no setter because it never changes.
     public void setName(String name) { this.name = name; }
 
